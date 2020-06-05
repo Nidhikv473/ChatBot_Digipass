@@ -1,0 +1,354 @@
+{
+  "intents": [
+    {
+      "intent": "Negativintent",
+      "examples": [
+        {
+          "text": "no"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "QuestionAnsers",
+      "examples": [
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Not sure"
+        },
+        {
+          "text": "No"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "How are you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "PositiveQuestion",
+      "examples": [
+        {
+          "text": "Correct"
+        },
+        {
+          "text": "Sure"
+        },
+        {
+          "text": "Yes"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "aduthatu",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_7_1591343058875",
+      "conditions": "#PositiveQuestion",
+      "dialog_node": "node_1_1591343192753"
+    },
+    {
+      "type": "standard",
+      "title": "ThirdQ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Have you done any international travel in the last 28-45 days  "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1591350919020",
+      "conditions": "#Negativintent",
+      "dialog_node": "node_5_1591351048148",
+      "previous_sibling": "node_8_1591351027938"
+    },
+    {
+      "type": "standard",
+      "title": "End",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry ..We cannot assure a Digi pass for you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1591350919020",
+      "conditions": "#PositiveQuestion",
+      "dialog_node": "node_8_1591351027938"
+    },
+    {
+      "type": "standard",
+      "title": "IssuePass",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks for your time.We are going to issue the pass for you.Please check your email for the same."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1591354146204",
+      "conditions": "#Negativintent",
+      "dialog_node": "node_4_1591354973158"
+    },
+    {
+      "type": "standard",
+      "title": "FourthhQ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Did you recently interacted or lived with someone who has tested positive for Covid- 19 "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1591351048148",
+      "conditions": "#Negativintent",
+      "dialog_node": "node_1_1591351128918",
+      "previous_sibling": "node_7_1591351092255"
+    },
+    {
+      "type": "standard",
+      "title": "End",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry ..We cannot assure a Digi pass for you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1591351048148",
+      "conditions": "#PositiveQuestion",
+      "dialog_node": "node_7_1591351092255"
+    },
+    {
+      "type": "standard",
+      "title": "SecondQ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Have you ever had any of the following – Diabetes, Hypertension, Lung Disease, Heart Disease"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591343339313",
+      "conditions": "#Negativintent",
+      "dialog_node": "node_7_1591350919020",
+      "previous_sibling": "node_10_1591345869700"
+    },
+    {
+      "type": "standard",
+      "title": "End",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry ..We cannot assure a Digi pass for you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1591343339313",
+      "conditions": "#PositiveQuestion",
+      "dialog_node": "node_10_1591345869700"
+    },
+    {
+      "type": "standard",
+      "title": "FifthQ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Is your area under Containment Zone /Red Zone "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1591351128918",
+      "conditions": "#Negativintent",
+      "dialog_node": "node_10_1591354146204",
+      "previous_sibling": "node_8_1591354121876"
+    },
+    {
+      "type": "standard",
+      "title": "End",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sorry ..We cannot assure a Digi pass for you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1591351128918",
+      "conditions": "#PositiveQuestion",
+      "dialog_node": "node_8_1591354121876"
+    },
+    {
+      "type": "standard",
+      "title": "FirstQuestion",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Few things would like to hear from you..\nAre you experiencing any of the following symptom – Cough, Fever, Difficulty in breathing "
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "conditions": "#PositiveQuestion",
+      "dialog_node": "node_2_1591343339313",
+      "previous_sibling": "node_7_1591343058875"
+    },
+    {
+      "type": "standard",
+      "title": "End",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok Thank You..GoodBye"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "conditions": "#Negativintent",
+      "dialog_node": "node_7_1591343058875"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello, Would you like to get a Digi Pass,I can help you out."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome || #PositiveQuestion",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Chatbot",
+  "language": "en",
+  "description": ""
+}
